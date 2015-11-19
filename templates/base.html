@@ -1,0 +1,55 @@
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="shortcut icon" href="{% static 'favicon' %}" />
+
+<link rel="stylesheet" type="text/css" href="{% static 'main.css' %}" />
+
+<title>{% block title %}TEPCG{% endblock %}</title>
+
+
+<script type="text/javascript">
+
+{% block ex_script %}{% endblock %}
+
+</script>
+
+
+</head>
+
+<body>
+
+
+	<div style="text-align:center;">
+	
+		<br>	
+	
+		<header><a href="{% url 'home' %}">Turkish English Parallel Corpus Generator</a></header>
+		
+		<br>	
+
+		{% block main %}
+				
+		
+		<p>Welcome to The Game</p>		
+		
+		<p>Choose Difficulty</p>
+				
+		
+		<a class="btn" href="{% url 'easy' %}">Easy</a>
+			
+		<a class="btn" href="{% url 'hard' %}">Hard</a>
+		
+
+		{% endblock %}
+
+	</div>
+
+</body>
+
+</html>

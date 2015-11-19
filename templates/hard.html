@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block ex_script %}
+
+function hideshow(which){
+if (!document.getElementById)
+return
+if (which.style.display=="block")
+which.style.display="none"
+else
+which.style.display="block"
+}
+
+{% endblock %}
+
+{% block main %} 
+
+
+		<br><br>
+
+ 		<div class="textbox" > {{ false_en }} </div>
+ 		
+		<a href="javascript:hideshow(document.getElementById('hint_en'))">Show Hint</a> 		
+ 		
+ 		<p id="hint_en" style="display: none;">{{ trans_en }}<p>
+
+
+		<div class="textbox"> {{ false_tr }} </div>
+		
+		<a href="javascript:hideshow(document.getElementById('hint_tr'))">Show Hint</a> 		
+ 		
+ 		<p id="hint_tr" style="display: none;">{{ trans_tr }}<p>
+
+		<br>
+
+
+		<a class="btn-t" href="{% url 'trueh' article=article snumen=sent_numen snumtr=sent_numtr %}">True</a>
+    	
+    	<a class="btn-f" href="{% url 'falseh' article=article snumen=sent_numen snumtr=sent_numtr %}">False</a>
+
+		<br><br>
+		
+		<a href="{% url 'hard' %}" >Skip these sentences.</a>	<br><br>
+
+
+		<img id="wcloud" src="{% static 'images/out.png' %}"></img>	
+
+
+ {% endblock %}

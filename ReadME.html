@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="shortcut icon" href="{% static 'favicon' %}" />
+
+<link rel="stylesheet" type="text/css" href="static/main.css" />
+
+<title>ReadME</title>
+
+
+</head>
+
+<body>
+
+
+	<div style="text-align:center;">
+	
+		<br>	
+	
+		<header><a href="">Turkish English Parallel Corpus Generator</a></header>
+		
+		<br>	
+
+		<div class="textbox">  
+
+				<h2>Group Members</h2>
+
+				<h4>Mustafa Erkan BAŞAR</h4> 
+			'Easy' section of the Gamification & Corpus Generation with NLP tools & Scripts
+
+				<h4>Osman MUTLU</h4> 
+			'Hard' section of the Gamification & Word Cloud & Scripts
+				
+				<h4>Hazım Alpay GÜNAL</h4> 
+			Data Scraping & User Interface & Scripts
+
+		</div><br>	
+
+		<div class="textbox">  
+
+				<h2>Project Description</h2>
+
+				<p>
+					This project aims to generate a solid Turkish - English Parallel Corpora. <br>
+					To achive this, first, we generate a temporary corpora out of the article we scraped. 
+					Then we use our gamification system to modify it with matching the right translated sentences. <br>
+					We used Django framework with python3 for representation and gamification, python2.7 for scrapy, and nltk for data process.<br>
+					In addition, we used a translation API named <a href="http://pythonhosted.org/goslate/">Goslate</a>. <br>
+					We used an open sourced <a href="https://github.com/amueller/word_cloud">word cloud</a> project by amueller from GitHub.
+				</p>
+
+		</div><br>	
+
+		<div class="textbox">  
+
+				<h2>Data Description</h2>
+
+				<p>
+					We have worked with files as inputs and outputs. File are mostly json and a few of them are in xml and txt format. <br>
+					First of all we are scraping the articles into a txt file (E.g.: article1_en.txt)  then when a new txt file
+					arrived, one of our scripts detect it and writes the data to a xml file(E.g.: article1_en.xml) as a 
+					first attempt of a corpus. These xml files are parsed into json files (E.g.: article1_en.json) in order to use it in gamification system. 
+					Then it continues like that in several processes to complete gamification. Finally and last the true translation 
+					of sentences are got back together in a xml file(E.g.: article1_en.xml). 
+
+				</p>
+
+		</div><br>	
+
+
+		<div class="textbox">  
+
+				<h2>Links & Screenshots</h2>
+
+				(Highlighted parts with yellow are scraped)
+
+				<p>An example of an English news we scraped. <br>
+					<a href="http://en.rusencakir.com/Government-Crisis-and-its-potential-repercussions-on-the-Resolution-Process/5156">
+						http://en.rusencakir.com/Government-Crisis-and-its-potential-repercussions-on-the-Resolution-Process/5156</a>
+				</p>
+				
+				
+				<img src="static/images/screen_en.png">
+
+				<p>An example of a Turkish news we scraped. <br>
+					<a href="http://en.rusencakir.com/Government-Crisis-and-its-potential-repercussions-on-the-Resolution-Process/5156">
+						http://en.rusencakir.com/Government-Crisis-and-its-potential-repercussions-on-the-Resolution-Process/5156</a>
+				</p>
+				
+				
+				<img src="static/images/screen_tr.png">
+
+				
+
+		</div><br>	
+
+
+		<div class="textbox">  
+
+				<h2>Installation</h2>
+					
+
+				<ul>	
+					<li>Operating System : Ubuntu 14.04</li>
+					<li>Download <a href="http://continuum.io/downloads#py34">Anaconda for Python 3.4</a> </li>
+					<li>Install Anaconda : bash Anaconda3-2.2.0-Linux-x86_64.sh </li>
+					<li>Create a virtual environment* with Anaconda : conda create -p ~/path-to-folder/Scrapy anaconda=2.2.0 python=2.7
+ </li>					
+					<li>Install Scrapy into virtual env** : conda install scrapy </li>
+					<li>Install NLTK : pip install -U nltk </li>
+					<li>Download NLTK data : nltk.download() (in python shell) </li>
+					<li>Install Django 1.6.1 : pip install Django==1.6.1 (into python3 folder) </li>
+					<li>Install Goslate : pip install goslate</li>
+					<li>Install Word Cloud : pip install git+git://github.com/amueller/word_cloud.git</li>
+				</ul> 
+
+				*Run create command in the main folder of the project, near TEPCG. <br>
+				**To run Scrapy codes activate the environment : source activate ~/path-to-folder/Scrapy.
+				
+
+		</div>
+
+		
+
+	</div>
+
+</body>
+
+</html>
